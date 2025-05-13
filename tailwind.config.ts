@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -138,6 +139,20 @@ export default {
 					'100%': {
 						'background-position': '200% 0'
 					}
+				},
+				'float': {
+					'0%': { 
+						transform: 'translateY(0px)',
+						opacity: '0.5'
+					},
+					'50%': { 
+						transform: 'translateY(-20px)',
+						opacity: '0.8' 
+					},
+					'100%': { 
+						transform: 'translateY(0px)',
+						opacity: '0.5'
+					}
 				}
 			},
 			animation: {
@@ -149,7 +164,9 @@ export default {
 				'fade-in-delay-3': 'fade-in 0.5s ease-out 0.6s forwards',
 				'scale-in': 'scale-in 0.3s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
-				'text-shimmer': 'text-shimmer 4s ease infinite'
+				'text-shimmer': 'text-shimmer 4s ease infinite',
+				'float': 'float 8s ease-in-out infinite',
+				'float-delay': 'float 10s ease-in-out 1s infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -99,7 +98,7 @@
   }
 
   body {
-    @apply bg-digital-dark-purple text-white font-inter scroll-smooth;
+    @apply bg-digital-dark-purple text-white scroll-smooth;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -128,5 +127,9 @@
   .hero-grid {
     background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 30px 30px;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(155, 135, 245, 0.1);
   }
 }
