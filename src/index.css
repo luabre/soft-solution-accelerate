@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -105,7 +106,7 @@
 
 @layer components {
   .shimmer-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-digital-purple to-white bg-shimmer-gradient bg-200% animate-text-shimmer;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-digital-purple to-white bg-[length:200%_100%] animate-text-shimmer;
   }
 
   .gradient-text {
@@ -130,6 +131,6 @@
   }
   
   .shadow-glow {
-    box-shadow: 0 0 30px rgba(155, 135, 245, 0.1);
+    box-shadow: 0 0 30px rgba(155, 135, 245, 0.15);
   }
 }
