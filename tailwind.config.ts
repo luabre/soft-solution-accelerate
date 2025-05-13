@@ -156,6 +156,9 @@ export default {
 				'purple-gradient': 'linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%)',
 				'dark-gradient': 'linear-gradient(to bottom, #1A1F2C 0%, #2A2F3C 100%)',
 				'shimmer-gradient': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)'
+			},
+			backgroundSize: {
+				'200%': '200%',
 			}
 		}
 	},
