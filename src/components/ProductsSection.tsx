@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
-import { Layers, Users, MapPin, CheckCircle, Rocket, Info } from "lucide-react";
+import { Layers, Users, MapPin, CheckCircle, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useIsMobile } from "../hooks/use-mobile";
 
 interface ProductCardProps {
@@ -75,28 +75,26 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
             </div>
             <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
             
-            <ul className="space-y-3 mb-6 flex-1 overflow-y-auto max-h-[50vh] md:max-h-none scrollbar-thin">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-digital-bright-blue"></div>
-                  </div>
-                  <span className="text-white/90">{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <ScrollArea className="flex-1 mb-6">
+              <ul className="space-y-3 pr-4">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-digital-bright-blue"></div>
+                    </div>
+                    <span className="text-white/90">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollArea>
             
-            <div className="mt-auto flex flex-col gap-3">
-              <Button variant="outline" className="border-digital-bright-blue text-digital-bright-blue hover:bg-digital-bright-blue hover:text-white transition-colors">
-                Ver como funciona
-              </Button>
-              
-              {isMobile && (
-                <Button variant="ghost" onClick={handleFlip} className="text-white/70">
-                  Voltar
-                </Button>
-              )}
-            </div>
+            <Button 
+              variant="outline" 
+              className="mt-auto border-digital-bright-blue text-digital-bright-blue hover:bg-digital-bright-blue hover:text-white transition-colors"
+              onClick={(e) => e.preventDefault()}
+            >
+              Ver como funciona
+            </Button>
           </div>
         </div>
       </div>
