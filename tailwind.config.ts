@@ -182,6 +182,13 @@ export default {
 						transform: 'scale(0)',
 						opacity: '0'
 					}
+				},
+				'typing': {
+					from: { width: '0' },
+					to: { width: '100%' }
+				},
+				'blink': {
+					'50%': { borderColor: 'transparent' }
 				}
 			},
 			animation: {
@@ -198,6 +205,7 @@ export default {
 				'float-delay': 'float 10s ease-in-out 1s infinite',
 				'float-rotate': 'float-rotate 15s ease-in-out infinite',
 				'star-fade': 'star-fade 1.5s ease-out forwards',
+				'typing': 'typing 2s steps(20, end)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
