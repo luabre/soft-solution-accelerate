@@ -4,8 +4,11 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ProductsSection from '../components/ProductsSection';
-import DifferentialsSection from '../components/DifferentialsSection';
+import SimulatorSection from '../components/SimulatorSection';
+import TechnologySection from '../components/TechnologySection';
 import CustomSolutionsSection from '../components/CustomSolutionsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import CallToActionSection from '../components/CallToActionSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -15,8 +18,11 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ProductsSection />
-      <DifferentialsSection />
+      <SimulatorSection />
+      <TechnologySection />
       <CustomSolutionsSection />
+      <TestimonialsSection />
+      <CallToActionSection />
       <Footer />
     </div>
   );
