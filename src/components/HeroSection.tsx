@@ -1,64 +1,123 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (textRef.current) {
+        const { clientX, clientY } = e;
+        const x = (clientX / window.innerWidth) * 20 - 10;
+        const y = (clientY / window.innerHeight) * 20 - 10;
+        
+        textRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }
+
+      // Create star element
+      const star = document.createElement('div');
+      star.className = 'absolute rounded-full bg-white/40 pointer-events-none animate-star-fade';
+      
+      // Random size between 3-10px
+      const size = Math.random() * 7 + 3;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // Position at mouse with small offset
+      star.style.left = `${e.clientX + (Math.random() * 30 - 15)}px`;
+      star.style.top = `${e.clientY + (Math.random() * 30 - 15)}px`;
+      
+      container.appendChild(star);
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        star.remove();
+      }, 1500);
+    };
+
+    container.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      container.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden py-12 md:py-20">
-      {/* Background effects */}
+    <section 
+      ref={containerRef}
+      className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden"
+    >
+      {/* Innovative background - diagonal split with gradient */}
       <div className="absolute inset-0 bg-digital-dark-purple z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-digital-purple/5 to-transparent"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-digital-purple/20 via-transparent to-transparent opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-digital-bright-blue/20 via-digital-purple/10 to-transparent"></div>
+        <div className="absolute top-0 right-0 w-full h-full rotate-180 transform skew-y-12 bg-gradient-to-b from-digital-vivid-purple/10 via-transparent to-transparent opacity-70"></div>
       </div>
       
-      {/* Animated orbs */}
-      <div className="absolute top-1/3 right-[10%] w-32 h-32 bg-digital-purple/30 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-1/4 left-[15%] w-40 h-40 bg-digital-secondary-purple/20 rounded-full blur-xl animate-float-delay"></div>
-      <div className="absolute top-1/2 left-[60%] w-24 h-24 bg-digital-vivid-purple/20 rounded-full blur-lg animate-float"></div>
+      {/* Interactive 3D elements */}
+      <div className="absolute top-1/4 right-1/5 w-64 h-64 rounded-full interactive-sphere"></div>
+      <div className="absolute bottom-1/3 left-1/6 w-40 h-40 rounded-full interactive-sphere-alt"></div>
       
+      {/* Futuristic grid overlay */}
+      <div className="absolute inset-0 futuristic-grid opacity-20"></div>
+
+      {/* Animated particles */}
+      <div className="particles"></div>
+      
+      {/* Main content area */}
       <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="flex flex-col items-center text-center gap-8 md:gap-12">
-          {/* Main heading with impactful typography */}
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-digital-purple to-white">
-            <span className="block">DIGITAL</span>
-            <span className="shimmer-text font-extrabold">TRANSFORMAÇÃO</span>
-          </h1>
+        <div className="flex flex-col items-center justify-center gap-10 text-center">
+          {/* Main heading with 3D perspective effect */}
+          <div
+            ref={textRef} 
+            className="perspective-text transition-transform duration-200 ease-out"
+          >
+            <h1 className="glitch-heading text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter">
+              <span className="block relative inline-block transform hover:scale-110 transition-transform duration-300 perspective-layer-1">DIGITAL</span>
+              <span className="neon-text block perspective-layer-2">TRANS<span className="text-digital-bright-blue">FORMA</span>ÇÃO</span>
+            </h1>
+          </div>
           
-          {/* Highlighted bullet points */}
-          <div className="flex flex-col gap-5 animate-fade-in-delay-1 max-w-2xl">
-            {bulletPoints.map((point, index) => (
-              <div key={index} className="flex items-center gap-4 group">
-                <span className="inline-block w-3 h-3 rounded-full bg-digital-purple group-hover:scale-125 transition-all duration-300"></span>
-                <p className="text-xl md:text-2xl text-white/90 font-medium">{point}</p>
+          {/* Minimal key points with creative styling */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-3xl mx-auto">
+            {["PLATAFORMAS PENSANTES", "NEGÓCIOS ESCALÁVEIS", "AUTOMAÇÃO SURPREENDENTE"].map((point, idx) => (
+              <div 
+                key={idx} 
+                className="feature-pill group"
+              >
+                <span className="text-lg md:text-xl font-medium">{point}</span>
+                <div className="feature-pill-glow"></div>
               </div>
             ))}
           </div>
           
-          {/* CTA buttons with enhanced styling */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-6 animate-fade-in-delay-2">
-            <Button className="bg-digital-purple hover:bg-digital-purple/90 text-white px-8 py-7 text-lg rounded-full flex items-center gap-2 hover:-translate-y-1 transition-all duration-300 shadow-[0_0_15px_rgba(155,135,245,0.5)]">
-              Ver projetos
-              <ArrowRight size={20} />
+          {/* Interactive call-to-action */}
+          <div className="flex flex-col sm:flex-row gap-8 mt-12">
+            <Button className="magnetic-button">
+              <span className="relative z-10 flex items-center gap-2">
+                Iniciar projeto
+                <ArrowRight size={20} />
+              </span>
             </Button>
-            <Button variant="outline" className="border-white/20 hover:border-digital-purple text-white hover:bg-white/5 px-8 py-7 text-lg rounded-full flex items-center gap-2 hover:-translate-y-1 transition-all duration-300">
-              Solicitar solução
+            
+            <Button variant="outline" className="cyber-button">
+              <span className="glitch-text">Ver soluções</span>
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Bottom glow effect */}
-      <div className="absolute -bottom-24 left-1/2 w-[800px] h-[200px] bg-digital-purple/30 rounded-full blur-[100px] -translate-x-1/2"></div>
+      {/* Floating tech symbols */}
+      <div className="absolute top-1/2 left-1/4 tech-symbol text-5xl opacity-20">&lt;/&gt;</div>
+      <div className="absolute bottom-1/3 right-1/5 tech-symbol text-4xl opacity-15">AI</div>
+      <div className="absolute top-1/3 right-1/3 tech-symbol text-6xl opacity-10">∞</div>
     </section>
   );
 };
-
-// Bullet points data
-const bulletPoints = [
-  "Plataformas que pensam",
-  "Negócios que escalam",
-  "Automações que surpreendem"
-];
 
 export default HeroSection;
