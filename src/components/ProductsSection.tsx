@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import { Layers, Users, MapPin, CheckCircle, Rocket } from "lucide-react";
+import { Layers, Users, MapPin, CheckCircle, Rocket, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useIsMobile } from "../hooks/use-mobile";
 
 interface ProductCardProps {
   title: string;
@@ -15,12 +16,17 @@ interface ProductCardProps {
 
 const ProductCard = ({ title, description, features, icon, color, image }: ProductCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const isMobile = useIsMobile();
+  
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
   
   return (
     <div 
       className="product-card-container h-full perspective-3d"
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      onMouseEnter={() => !isMobile && setIsFlipped(true)}
+      onMouseLeave={() => !isMobile && setIsFlipped(false)}
     >
       <div className={`product-card h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
         <div className="product-card-front h-full rounded-xl overflow-hidden border border-white/10 bg-digital-dark-purple relative">
@@ -37,16 +43,29 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
             </div>
             <h3 className="text-3xl font-bold mb-2 text-white">{title}</h3>
             <p className="text-white/70">{description}</p>
+            
+            {isMobile && (
+              <button 
+                onClick={handleFlip}
+                className="mt-4 bg-digital-bright-blue/20 border border-digital-bright-blue/40 text-white px-4 py-2 rounded-md flex items-center justify-center gap-2 w-full"
+              >
+                <Info size={16} />
+                <span>Ver detalhes</span>
+              </button>
+            )}
           </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-white/50 flex items-center gap-2">
-              <span className="text-sm">Hover para detalhes</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M19 12L12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+          
+          {!isMobile && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-white/50 flex items-center gap-2">
+                <span className="text-sm">Hover para detalhes</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M19 12L12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </div>
-          </div>
+          )}
         </div>
         
         <div className="product-card-back h-full rounded-xl overflow-hidden absolute inset-0 border border-white/10 bg-gradient-to-br from-digital-dark-purple to-black rotate-y-180 backface-hidden">
@@ -56,7 +75,7 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
             </div>
             <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
             
-            <ul className="space-y-3 mb-6 flex-1">
+            <ul className="space-y-3 mb-6 flex-1 overflow-y-auto max-h-[50vh] md:max-h-none scrollbar-thin">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
@@ -67,9 +86,17 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
               ))}
             </ul>
             
-            <Button variant="outline" className="mt-auto border-digital-bright-blue text-digital-bright-blue hover:bg-digital-bright-blue hover:text-white transition-colors">
-              Ver como funciona
-            </Button>
+            <div className="mt-auto flex flex-col gap-3">
+              <Button variant="outline" className="border-digital-bright-blue text-digital-bright-blue hover:bg-digital-bright-blue hover:text-white transition-colors">
+                Ver como funciona
+              </Button>
+              
+              {isMobile && (
+                <Button variant="ghost" onClick={handleFlip} className="text-white/70">
+                  Voltar
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>
