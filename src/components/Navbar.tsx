@@ -27,8 +27,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Innovative logo with glitch effect */}
         <a href="#" className="text-white font-bold text-2xl md:text-3xl group relative">
-          <span className="glitch-text relative z-10">Digital</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-digital-purple to-digital-bright-blue">Soft</span>
+          <span className="glitch-text relative z-10">Digi</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-digital-purple to-digital-bright-blue">Unic</span>
           <div className="absolute -inset-1 bg-digital-purple/20 rounded-lg blur-lg group-hover:bg-digital-bright-blue/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
         </a>
         
