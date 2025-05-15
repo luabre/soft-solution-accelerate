@@ -49,7 +49,6 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
                 onClick={handleFlip}
                 className="mt-4 bg-digital-bright-blue/20 border border-digital-bright-blue/40 text-white px-4 py-2 rounded-md flex items-center justify-center gap-2 w-full"
               >
-                <Info size={16} />
                 <span>Ver detalhes</span>
               </button>
             )}
