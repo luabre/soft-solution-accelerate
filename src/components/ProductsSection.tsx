@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Layers, Users, MapPin, CheckCircle, Rocket } from "lucide-react";
+import { Layers, Users, MapPin, CheckCircle, Rocket, BookOpenText, ShoppingCart, Book, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -103,6 +104,20 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
 
 const ProductsSection = () => {
   const products = [
+    {
+      title: "DigitalmenteSeu",
+      description: "Hub digital completo com Blog, Vitrine, Glossário de IA, Digitube e área de membros.",
+      features: [
+        "Blog dinâmico com conteúdo personalizado",
+        "Vitrine digital para seus produtos e serviços",
+        "Glossário de IA com termos e explicações detalhadas",
+        "Digitube para compartilhamento de vídeos exclusivos",
+        "Área de membros com conteúdo premium"
+      ],
+      icon: <Users size={24} className="text-digital-light-purple" />,
+      color: "bg-digital-light-purple",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    },
     {
       title: "SourceXpress",
       description: "O sourcing B2B que rivaliza com gigantes – com mais agilidade e inteligência real.",
