@@ -66,8 +66,8 @@ const CallToActionSection = () => {
                   ))}
                 </ul>
                 
-                <Button className="w-full bg-digital-bright-blue hover:bg-digital-bright-blue/80 text-white font-semibold py-6">
-                  <span className="flex items-center justify-center gap-2">
+                <Button className="w-full bg-digital-bright-blue hover:bg-digital-bright-blue/80 text-white font-bold py-6 shadow-md">
+                  <span className="flex items-center justify-center gap-2 text-lg">
                     Quero lançar meu produto
                     <ArrowRight size={20} />
                   </span>
@@ -115,8 +115,8 @@ const CallToActionSection = () => {
                   ))}
                 </ul>
                 
-                <Button className="w-full bg-digital-vivid-purple hover:bg-digital-vivid-purple/80 text-white font-semibold py-6">
-                  <span className="flex items-center justify-center gap-2">
+                <Button className="w-full bg-digital-vivid-purple hover:bg-digital-vivid-purple/80 text-white font-bold py-6 shadow-md">
+                  <span className="flex items-center justify-center gap-2 text-lg">
                     Quero transformar meu negócio
                     <ArrowRight size={20} />
                   </span>
