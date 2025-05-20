@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Layers, Users, MapPin, CheckCircle, Rocket, BookOpenText, ShoppingCart, Book, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -105,13 +106,13 @@ const ProductsSection = () => {
   const products = [
     {
       title: "DigitalmenteSeu",
-      description: "Hub digital completo com Blog, Vitrine, Glossário de IA, Digitube e área de membros.",
+      description: "Muito mais que um hub de conhecimento — um espaço onde o saber encontra identidade.",
       features: [
-        "Blog dinâmico com conteúdo personalizado",
-        "Vitrine digital para seus produtos e serviços",
-        "Glossário de IA com termos e explicações detalhadas",
-        "Digitube para compartilhamento de vídeos exclusivos",
-        "Área de membros com conteúdo premium"
+        "Plataforma digital para cursos",
+        "Clube de membros exclusivo",
+        "Experiências educativas personalizadas por nicho",
+        "Área de membros com conteúdo premium",
+        "Glossário de IA com termos e explicações detalhadas"
       ],
       icon: <Users size={24} className="text-digital-light-purple" />,
       color: "bg-digital-light-purple",
@@ -119,11 +120,11 @@ const ProductsSection = () => {
     },
     {
       title: "SourceXpress",
-      description: "O sourcing B2B que rivaliza com gigantes – com mais agilidade e inteligência real.",
+      description: "Criado para equipes de compras que querem liderar com agilidade, visão e controle — sem depender de gigantes.",
       features: [
-        "Sourcing inteligente com IA",
-        "Automação total de processos",
-        "Desafia grandes players do mercado",
+        "Sistema inteligente para sourcing",
+        "Gestão de fornecedores",
+        "Automação de cotações e compliance",
         "Escalabilidade sem limites"
       ],
       icon: <Layers size={24} className="text-digital-bright-blue" />,
@@ -131,13 +132,13 @@ const ProductsSection = () => {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     },
     {
-      title: "LeadHunter AI",
-      description: "Um closer digital que vende sozinho. Bem-vindo à nova era das vendas automatizadas.",
+      title: "RadarHunter Pro AI",
+      description: "Desenhado para times comerciais que querem vender com inteligência — e não com cansaço.",
       features: [
-        "CRM vivo e autônomo",
-        "SDR e Closer automáticos",
-        "Escala sem equipe",
-        "Integração com qualquer funil"
+        "Sistema inteligente para prospecção",
+        "Qualificação e fechamento B2B",
+        "IA SDR, Closer e CRM visual",
+        "Blocos de foco e produtividade assistida por IA"
       ],
       icon: <Users size={24} className="text-digital-purple" />,
       color: "bg-digital-purple",
@@ -145,11 +146,11 @@ const ProductsSection = () => {
     },
     {
       title: "LocaView AI",
-      description: "A IA que organiza, ranqueia e automatiza a locação para audiovisual. O set nunca foi tão inteligente.",
+      description: "Criado para quem enxerga locações como palco de histórias — não só como pontos no mapa.",
       features: [
-        "Gestão audiovisual completa",
-        "IA para produção otimizada",
-        "Relatórios automáticos",
+        "Sistema inteligente para gestão de locações",
+        "Otimização logística",
+        "Relatórios e pontuação de locais via IA",
         "Tomada de decisão inteligente"
       ],
       icon: <MapPin size={24} className="text-digital-vivid-purple" />,
@@ -171,12 +172,12 @@ const ProductsSection = () => {
     },
     {
       title: "Jovem Pro",
-      description: "Educação gamificada com preparação para mercado de trabalho e IA personalizada para desenvolvimento.",
+      description: "Feito para dar o primeiro passo com coragem, mesmo sem saber o destino.",
       features: [
-        "Educação gamificada inovadora",
-        "Preparação para mercado de trabalho",
-        "IA personalizada para cada estudante",
-        "Métricas de progresso em tempo real"
+        "Plataforma educacional para inserção no mercado de trabalho",
+        "Curso guiado",
+        "Simulador de entrevistas",
+        "Mentor virtual"
       ],
       icon: <Rocket size={24} className="text-digital-light-purple" />,
       color: "bg-digital-light-purple",
