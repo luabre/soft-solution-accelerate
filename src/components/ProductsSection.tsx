@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Layers, Users, MapPin, CheckCircle, Rocket, BookOpenText, ShoppingCart, Book, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -93,7 +92,7 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
               className="mt-auto border-digital-bright-blue text-digital-bright-blue hover:bg-digital-bright-blue hover:text-white transition-colors"
               onClick={(e) => e.preventDefault()}
             >
-              Ver como funciona
+              Explorar a Solução
             </Button>
           </div>
         </div>
@@ -158,13 +157,13 @@ const ProductsSection = () => {
       image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
     },
     {
-      title: "TaskGenius AI",
-      description: "Planos de ação instantâneos e automação de tarefas com organização inteligente para seu negócio.",
+      title: "Fala Rê",
+      description: "Criado para que ninguém se sinta sozinho na hora de cuidar da saúde.",
       features: [
-        "Planos de ação instantâneos",
-        "Organização inteligente",
-        "Automação de tarefas repetitivas",
-        "Integração com ferramentas existentes"
+        "Sistema inteligente para lembretes de medicação",
+        "Alertas para consultas e cuidado remoto",
+        "IA de voz e suporte ao cuidador",
+        "Integração com ferramentas de saúde"
       ],
       icon: <CheckCircle size={24} className="text-digital-secondary-purple" />,
       color: "bg-digital-secondary-purple",
