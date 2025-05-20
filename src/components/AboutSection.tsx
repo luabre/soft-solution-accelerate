@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
@@ -309,7 +310,7 @@ const AboutSection = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button variant="outline" className="text-white border-digital-bright-blue hover:bg-digital-bright-blue/20 group">
+            <Button variant="cta" className="group">
               <span className="relative flex items-center gap-2">
                 Crie sua própria história com a Digital Soft Solution
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
