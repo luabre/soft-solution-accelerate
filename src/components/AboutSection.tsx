@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
@@ -210,8 +209,8 @@ const AboutSection = () => {
       )
     },
     {
-      title: "E vira um produto que você pode lançar, vender ou licenciar.",
-      description: "O resultado final é muito mais que um software. É um ativo de negócio completo, pronto para ser comercializado e gerar receita de diferentes maneiras.",
+      title: "Você não está criando só um software. Está criando um legado digital.",
+      description: "A sua ideia vira um produto único — pronto para ser lançado, vendido ou licenciado. Com alma, estratégia e automação, ele nasce para gerar impacto real e receita recorrente. Porque aqui, o digital tem propósito. E você é o dono dele.",
       visualElement: (
         <div className="final-product-visualization">
           <div className="product-showcase w-full max-w-md mx-auto">
