@@ -12,20 +12,12 @@ import CustomSolutionsSection from '../components/CustomSolutionsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CallToActionSection from '../components/CallToActionSection';
 import Footer from '../components/Footer';
-import CustomHeroButton from '../components/CustomHeroButton';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-digital-dark-purple">
       <Navbar />
-      <div className="relative">
-        <HeroSection />
-        <div className="absolute bottom-12 left-0 right-0 flex justify-center z-10 pointer-events-none">
-          <div className="pointer-events-auto">
-            <CustomHeroButton />
-          </div>
-        </div>
-      </div>
+      <HeroSection />
       <AboutSection />
       <ProductsSection />
       <SimulatorSection />
