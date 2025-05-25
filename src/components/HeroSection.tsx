@@ -222,16 +222,8 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Call to action buttons */}
+          {/* Call to action button - only the correct one */}
           <div className={`mt-10 flex flex-col gap-4 transform transition-all duration-1000 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <Button className="pulse-button group relative overflow-hidden">
-              <span className="relative z-10 flex items-center gap-2 font-bold text-lg py-6 px-8">
-                Desafie o comum – conheça nosso portfólio
-                <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={24} />
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-digital-bright-blue to-digital-vivid-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-            </Button>
-            
             <Button variant="cta" className="group px-6 py-6 text-lg">
               <span className="relative flex items-center gap-2">
                 Esqueça o comum. Veja o que é possível
