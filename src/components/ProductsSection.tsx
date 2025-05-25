@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Layers, Users, MapPin, CheckCircle, Rocket, BookOpenText, ShoppingCart, Book, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -75,18 +74,33 @@ const ProductCard = ({ title, description, features, icon, color, image }: Produ
             </div>
             <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
             
-            <ScrollArea className="flex-1 mb-6">
-              <ul className="space-y-3 pr-4">
-                {features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-digital-bright-blue"></div>
-                    </div>
-                    <span className="text-white/90">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollArea>
+            {isMobile ? (
+              <div className="flex-1 mb-6 overflow-y-auto">
+                <ul className="space-y-3">
+                  {features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-digital-bright-blue"></div>
+                      </div>
+                      <span className="text-white text-sm leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <ScrollArea className="flex-1 mb-6">
+                <ul className="space-y-3 pr-4">
+                  {features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <div className="mt-1 min-w-4 h-4 rounded-full bg-digital-purple/30 flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-digital-bright-blue"></div>
+                      </div>
+                      <span className="text-white/90">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </ScrollArea>
+            )}
             
             <Button 
               variant="outline" 
