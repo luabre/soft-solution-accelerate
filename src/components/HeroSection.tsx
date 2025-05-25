@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Brain, BrainCircuit, Database, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -223,7 +222,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Call to action with futuristic styling */}
+          {/* Call to action with futuristic styling - RESTORED */}
           <div className={`mt-10 transform transition-all duration-1000 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <Button className="pulse-button group relative overflow-hidden">
               <span className="relative z-10 flex items-center gap-2 font-bold text-lg py-6 px-8">
