@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -8,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Digital Soft Solution</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">DigiUnic Soluções Digitais</h3>
             <p className="mb-6 text-gray-400">
               Criamos produtos digitais com inteligência nativa, fluxos automatizados e autonomia real, 
               preparados para escalar sem depender de operação manual.
@@ -64,14 +63,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-digital-purple" />
-                <span>contato@digitalsoftsolution.com</span>
+                <span>contato@digiunic.com</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/10 text-center">
-          <p>&copy; {new Date().getFullYear()} Digital Soft Solution. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} DigiUnic Soluções Digitais. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
