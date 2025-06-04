@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Users, BarChart3, Fingerprint, Volume2, ShoppingCart } from "lucide-react";
+import { Users, BarChart3, Fingerprint, Volume2, ShoppingCart, MessageCircle } from "lucide-react";
 
 interface BuildingBlockProps {
   icon: React.ReactNode;
@@ -46,7 +45,8 @@ const CustomSolutionsSection = () => {
     { id: "sales", title: "Venda automática", icon: <ShoppingCart size={24} /> },
     { id: "dashboard", title: "Dashboard inteligente", icon: <BarChart3 size={24} /> },
     { id: "signature", title: "Assinatura digital", icon: <Fingerprint size={24} /> },
-    { id: "voice", title: "Notificação por voz", icon: <Volume2 size={24} /> }
+    { id: "voice", title: "Notificação por voz", icon: <Volume2 size={24} /> },
+    { id: "chatbot", title: "Atendimento por Chatbot via AI", icon: <MessageCircle size={24} /> }
   ];
   
   const toggleBlock = (id: string) => {
@@ -136,7 +136,7 @@ const CustomSolutionsSection = () => {
                       Montando solução...
                     </span>
                   ) : (
-                    `Montar solução (${selectedBlocks.length}/5 componentes)`
+                    `Montar solução (${selectedBlocks.length}/6 componentes)`
                   )}
                 </Button>
               </div>
@@ -255,6 +255,7 @@ const CustomSolutionsSection = () => {
                             {blockId === 'dashboard' && 'Métricas em tempo real com insights acionáveis.'}
                             {blockId === 'signature' && 'Autenticação segura com validação jurídica.'}
                             {blockId === 'voice' && 'Alertas por voz baseados em gatilhos personalizados.'}
+                            {blockId === 'chatbot' && 'Atendimento automatizado 24/7 com inteligência artificial avançada.'}
                           </p>
                         </div>
                       </li>
