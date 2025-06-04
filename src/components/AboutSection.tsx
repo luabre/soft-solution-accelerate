@@ -312,7 +312,7 @@ const AboutSection = () => {
           <div className="text-center mt-16">
             <Button variant="cta" className="group">
               <span className="relative flex items-center gap-2">
-                Crie sua própria história com a Digital Soft Solution
+                Crie sua própria história com a DigiUnic Soluções Digitais
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
