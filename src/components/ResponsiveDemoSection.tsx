@@ -52,6 +52,16 @@ const ResponsiveDemoSection = () => {
               </p>
             </div>
           )}
+
+          {/* Novo card: Desempenho Aprimorado - só aparece em desktop */}
+          {!isMobile && (
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hidden md:block">
+              <h3 className="text-xl font-bold mb-2 text-digital-bright-blue">Desempenho Aprimorado</h3>
+              <p className="text-sm text-gray-300">
+                Renderização mais rápida e fluidez nas interações em telas maiores, garantindo uma experiência ágil e sem travamentos.
+              </p>
+            </div>
+          )}
           
           {/* Elemento exclusivo mobile */}
           {isMobile && (
