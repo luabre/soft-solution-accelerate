@@ -4,6 +4,84 @@ Este documento contém todo o código-fonte do projeto DigiUnic, organizado por 
 
 ---
 
+## 🎨 Resumo Visual e Técnico do Projeto
+
+### Identidade Visual
+- **Tema:** Dark futurista premium com base roxo escuro (#1A1F2C)
+- **Paleta de cores:** `digital-purple` (#9b87f5), `digital-bright-blue` (#1EAEDB), `digital-vivid-purple` (#8B5CF6)
+- **Tipografia:** Space Grotesk (headings) + Inter (body)
+- **Estética:** Cyberpunk/tech com elementos de IA e automação
+
+### Fontes Utilizadas
+```html
+<!-- Google Fonts no index.html -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- CSS import no index.css -->
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+```
+
+### Efeitos Visuais Principais
+
+| Efeito | Classe CSS | Descrição |
+|--------|------------|-----------|
+| **Glitch Text** | `.glitch-heading` | Texto com efeito de distorção RGB animado |
+| **Neon Glow** | `.neon-text` | Brilho roxo intenso em texto |
+| **3D Perspective** | `.perspective-3d` | Container com perspectiva 2000px para cards 3D |
+| **Flip Cards** | `.rotate-y-180` + `.backface-hidden` | Cards que viram 180° no hover |
+| **Float Animation** | `.animate-float` | Elementos que flutuam suavemente |
+| **Float + Rotate** | `.animate-float-rotate` | Flutuação com rotação 360° |
+| **Shimmer Text** | `.shimmer-text` | Gradiente animado de esquerda para direita |
+| **Magnetic Button** | `.magnetic-button` | Botão com gradiente e glow no hover |
+| **Cyber Button** | `.cyber-button` | Botão com clip-path angular futurista |
+| **Pulse Glow** | `.pulsing-glow` | Animação de pulso com sombra azul |
+| **Grid Pattern** | `.futuristic-grid` | Background com linhas de grade sutis |
+| **Circuit Pattern** | `.bg-circuit-pattern` | Padrão SVG de circuito eletrônico |
+| **Interactive Spheres** | `.interactive-sphere` | Esferas blur com gradiente radial |
+| **Scanlines** | `.scanlines` | Efeito de linhas de monitor CRT |
+
+### Estrutura das Seções
+
+| # | Componente | Efeitos Principais | Descrição |
+|---|------------|-------------------|-----------|
+| 1 | **Navbar** | Glitch text, backdrop-blur | Navegação fixa com logo animado |
+| 2 | **HeroSection** | Neural network canvas, TypeAnimation, float-rotate | Rede neural interativa + texto digitado |
+| 3 | **AboutSection** | Carousel (Embla), gradient cards | Timeline da jornada da empresa |
+| 4 | **ProductsSection** | 3D flip cards, perspective | Cards que viram mostrando detalhes |
+| 5 | **SimulatorSection** | State machine, animated tags | Simulador interativo de ideias |
+| 6 | **TechnologySection** | SVG gear animation, pulse | Engrenagem central animada |
+| 7 | **ResponsiveDemoSection** | Device mockups, animated preview | Demo de responsividade |
+| 8 | **DifferentialsSection** | Grid cards, hover effects | 6 diferenciais com ícones |
+| 9 | **CustomSolutionsSection** | Building blocks, connection lines | Blocos montáveis com conexões |
+| 10 | **TestimonialsSection** | Canvas particles, cards | Depoimentos com partículas |
+| 11 | **CallToActionSection** | Dual CTAs, gradient cards | Dois caminhos de conversão |
+| 12 | **Footer** | Social icons, links grid | Rodapé com contatos |
+
+### Animações Customizadas (tailwind.config.ts)
+
+```typescript
+keyframes: {
+  'text-shimmer': { /* Gradiente deslizante */ },
+  'float': { /* Flutuação vertical suave */ },
+  'float-rotate': { /* Flutuação + rotação 360° */ },
+  'star-fade': { /* Estrela que aparece e desaparece */ },
+  'fade-in': { /* Entrada suave com translateY */ },
+  'typing': { /* Efeito máquina de escrever */ }
+}
+```
+
+### Dependências Especiais
+- `react-type-animation` - Efeito de digitação no Hero
+- `embla-carousel-react` - Carousel na AboutSection
+- `lucide-react` - Ícones em todo o projeto
+
+### Hook Customizado: useIsMobile
+Detecta viewport < 768px para adaptar:
+- Tamanhos de texto menores
+- Animações simplificadas
+- Interações touch-friendly (tap ao invés de hover nos cards)
+
+---
+
 ## Índice
 
 1. [Instruções de Migração](#instruções-de-migração)
